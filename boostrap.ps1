@@ -79,7 +79,7 @@ Function Exec-ShowOutput
 
 
    
-    if(!($ask){
+    if(!($ask)){
 		$ForceYes = $true
 	}
 
