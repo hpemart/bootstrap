@@ -163,6 +163,10 @@ Function Exec-ShowOutput
     write-host " # Now CLOSE this command prompt, and re-open to update paths!      # "
     write-host " #################################################################### "
     
+    Enable-PSRemoting
+    Set-NetFirewallRule -DisplayName "Windows Remote Management (HTTP-In)" -RemoteAddress LocalSubnet
+    Enable-NetFirewallRule -DisplayName "Windows Remote Management (HTTP-In)"
+    
     cd \
     & "C:\Program Files\PowerShell\7\pwsh.exe" -WorkingDirectory c:\ -command "git clone https://github.com/hpemart/com-cloud"
 
